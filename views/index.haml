@@ -1,2 +1,7 @@
-%h1 I am a test and development site on Heroku
+%p Number of entries in the collection is: #{@entries.count}
 
+#entries
+
+%label{:for => "add_entry"} Add New Entry
+%input#add_entry{:type => "text", :name => "add_entry", :size => "30"}
+%input#submit_entry{:type => "submit", :value => "Add Entry"}

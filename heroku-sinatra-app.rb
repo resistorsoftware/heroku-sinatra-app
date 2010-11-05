@@ -28,7 +28,7 @@ get '/' do
   MongoMapper.connection = Mongo::Connection.new('flame.mongohq.com', 27076)
   db = MongoMapper.database = 'app341300'
   MongoMapper.database.authenticate('app341300', '91akyn5lsuzlqt1mp2t3e2')
-  
+  @entries = LogEntry(:all)
   haml :index
 end
 
