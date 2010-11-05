@@ -1,0 +1,34 @@
+GEM
+  remote: http://rubygems.org/
+  remote: http://rubygems.org/
+  specs:
+    activesupport (3.0.1)
+    bson (1.1.2)
+    haml (3.0.23)
+    jnunemaker-validatable (1.8.4)
+      activesupport (>= 2.3.4)
+    json (1.4.6)
+    mongo (1.1.2)
+      bson (>= 1.1.1)
+    mongo_mapper (0.8.6)
+      activesupport (>= 2.3.4)
+      jnunemaker-validatable (~> 1.8.4)
+      plucky (~> 0.3.6)
+    nokogiri (1.4.3.1)
+    plucky (0.3.6)
+      mongo (~> 1.1)
+    rack (1.2.1)
+    sinatra (1.1.0)
+      rack (~> 1.1)
+      tilt (~> 1.1)
+    tilt (1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  haml
+  json
+  mongo_mapper
+  nokogiri
+  sinatra
