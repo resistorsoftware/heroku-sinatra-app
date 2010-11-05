@@ -4,6 +4,7 @@ GEM
   specs:
     activesupport (3.0.1)
     bson (1.1.2)
+    bson_ext (1.1.2)
     haml (3.0.23)
     jnunemaker-validatable (1.8.4)
       activesupport (>= 2.3.4)
@@ -27,6 +28,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext
   haml
   json
   mongo_mapper
