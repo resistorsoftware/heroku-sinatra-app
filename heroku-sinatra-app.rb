@@ -18,7 +18,7 @@ end
 
 # Quick test
 get '/' do
-  haml index.haml
+  haml :index
 end
 
 # Test at <appname>.heroku.com
