@@ -20,8 +20,8 @@ end
 # Quick test
 get '/' do
   MongoMapper.connection = Mongo::Connection.new('flame.mongohq.com', 27076)
-  MongoMapper.database = 'Development'
-  MongoMapper.database.authenticate('hunkybill', 'wong911')
+  MongoMapper.database = 'app341300'
+  MongoMapper.database.authenticate('app341300', '91akyn5lsuzlqt1mp2t3e2')
   haml :index
 end
 
