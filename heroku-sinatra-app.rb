@@ -13,16 +13,15 @@ configure :production do
   # Configure stuff here you'll want to
   # only be run at Heroku at boot
   
-  MongoMapper.connection = Mongo::Connection.new(ENV['MONGOHQ_URL'])
-  MongoMapper.database = 'development'
-  MongoMapper.database.authenticate('hunkybill', 'wong911')
-  
   # TIP:  You can get you database information
   #       from ENV['DATABASE_URI'] (see /env route below)
 end
 
 # Quick test
 get '/' do
+  MongoMapper.connection = Mongo::Connection.new('flame.mongohq.com', 27076)
+  MongoMapper.database = '341300'
+  MongoMapper.database.authenticate('341300', 'n5lsuzlqt1mp2t3e2')
   haml :index
 end
 
