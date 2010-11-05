@@ -2,9 +2,21 @@ $(function () {
     console.log("DOM Ready");
     $("#submit_entry").click(function(e){
       e.preventDefault();
-      if($("#add_entry").val().length > 0) {
-        console.log("You will submit ", $("#add_entry").val());
+      var entry = $("#add_entry").val();
+      if(entry.length) {
+        $.ajax({
+          type: 'post',
+          url: '/add_entry',
+          datatype: 'json',
+          data: {entry: entry},
+          success: function (result) {
+            console.log("Successfully added entry", result);
+            $("<p>",{
+              text: result.entry,
+              "class": 'entry'
+            }).appendTo("#entries");
+          }  
+        });
       }
-
     });
 });

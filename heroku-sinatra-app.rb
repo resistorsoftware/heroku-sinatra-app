@@ -32,6 +32,12 @@ get '/' do
   haml :index
 end
 
+post '/add_entry' do
+  entry = params[:entry]
+  content_type :json
+  {:entry => entry}.to_json
+end
+
 # Test at <appname>.heroku.com
 
 # You can see all your app specific information this way.
