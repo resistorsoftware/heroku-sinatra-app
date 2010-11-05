@@ -1,6 +1,8 @@
 %p Number of entries in the collection is: #{@entries.count}
 
 #entries
+  - @entries.each do |entry|
+    %p #{entry.message}
 
 %label{:for => "add_entry"} Add New Entry
 %input#add_entry{:type => "text", :name => "add_entry", :size => "30"}
