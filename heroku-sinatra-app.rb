@@ -21,7 +21,7 @@ end
 get '/' do
   MongoMapper.connection = Mongo::Connection.new('flame.mongohq.com', 27076)
   MongoMapper.database = '341300'
-  MongoMapper.database.authenticate('341300', 'n5lsuzlqt1mp2t3e2')
+  MongoMapper.database.authenticate('hunkybill', 'wong911')
   haml :index
 end
 
