@@ -17,11 +17,18 @@ configure :production do
   #       from ENV['DATABASE_URI'] (see /env route below)
 end
 
+class LogEntry
+  include MongoMapper::Document
+  key :message, String
+  timestamps!
+end
+
 # Quick test
 get '/' do
   MongoMapper.connection = Mongo::Connection.new('flame.mongohq.com', 27076)
-  MongoMapper.database = 'app341300'
+  db = MongoMapper.database = 'app341300'
   MongoMapper.database.authenticate('app341300', '91akyn5lsuzlqt1mp2t3e2')
+  
   haml :index
 end
 
