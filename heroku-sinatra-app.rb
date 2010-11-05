@@ -13,7 +13,7 @@ configure :production do
   # Configure stuff here you'll want to
   # only be run at Heroku at boot
   
-  MongoMapper.connection = Mongo::Connection.new(ENV[MONGOHQ_URL])
+  MongoMapper.connection = Mongo::Connection.new(ENV['MONGOHQ_URL'])
   MongoMapper.database = 'development'
   MongoMapper.database.authenticate('hunkybill', 'wong911')
   
