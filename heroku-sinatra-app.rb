@@ -7,11 +7,16 @@
 #
 require 'rubygems'
 require 'sinatra'
+require 'mongo_mapper'
 
 configure :production do
   # Configure stuff here you'll want to
   # only be run at Heroku at boot
-
+  
+  MongoMapper.connection = Mongo::Connection.new(ENV[MONGOHQ_URL])
+  MongoMapper.database = 'development'
+  MongoMapper.database.authenticate('hunkybill', 'wong911')
+  
   # TIP:  You can get you database information
   #       from ENV['DATABASE_URI'] (see /env route below)
 end
