@@ -37,7 +37,7 @@ post '/add_entry' do
   log_entry = LogEntry.create(:message => entry)
   log_entry.save
   content_type :json
-  {:entry => entry}.to_json
+  {:count => LogEntry.all.count, :entry => entry}.to_json
 end
 
 # Test at <appname>.heroku.com

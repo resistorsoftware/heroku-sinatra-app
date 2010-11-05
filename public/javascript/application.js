@@ -15,6 +15,7 @@ $(function () {
               text: result.entry,
               "class": 'entry'
             }).appendTo("#entries");
+            $("span.count").text(result.count);
           }  
         });
       }

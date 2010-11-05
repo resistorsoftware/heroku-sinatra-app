@@ -1,4 +1,5 @@
-%p Number of entries in the collection is: #{@entries.count}
+%p Number of entries in the collection is: 
+  %span.count #{@entries.count}
 
 #entries
   - @entries.each do |entry|
