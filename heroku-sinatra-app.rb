@@ -34,6 +34,7 @@ end
 
 post '/add_entry' do
   entry = params[:entry]
+  LogEntry.create(:message => entry)
   content_type :json
   {:entry => entry}.to_json
 end
