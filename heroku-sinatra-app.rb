@@ -17,7 +17,6 @@ configure :production do
   MongoMapper.database.authenticate('app341300', '91akyn5lsuzlqt1mp2t3e2')
   # TIP:  You can get you database information
   #       from ENV['DATABASE_URI'] (see /env route below)
-  puts "Environment DB #{ENV['MONGOHQ_URL']}\n"
 end
 
 class LogEntry
@@ -29,6 +28,7 @@ end
 # Quick test
 get '/' do
   @entries = LogEntry.all
+  puts "Environment DB #{ENV['MONGOHQ_URL']}\n"
   haml :index
 end
 
