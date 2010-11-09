@@ -12,9 +12,12 @@ require 'mongo_mapper'
 configure :production do
   # Configure stuff here you'll want to
   # only be run at Heroku at boot
-  
+  MongoMapper.connection = Mongo::Connection.new('flame.mongohq.com', 27076)
+  MongoMapper.database = 'app341300'
+  MongoMapper.database.authenticate('app341300', '91akyn5lsuzlqt1mp2t3e2')
   # TIP:  You can get you database information
   #       from ENV['DATABASE_URI'] (see /env route below)
+  puts "Environment DB #{ENV['MONGOHQ_URL']}\n"
 end
 
 class LogEntry
@@ -25,9 +28,6 @@ end
 
 # Quick test
 get '/' do
-  MongoMapper.connection = Mongo::Connection.new('flame.mongohq.com', 27076)
-  db = MongoMapper.database = 'app341300'
-  MongoMapper.database.authenticate('app341300', '91akyn5lsuzlqt1mp2t3e2')
   @entries = LogEntry.all
   haml :index
 end
